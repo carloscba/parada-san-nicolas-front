@@ -1,22 +1,32 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="stylesheets/style.css">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Title of the document</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
 
-<div ng-app="app" ng-controller="appCtrl">
+		<div ng-app="app" ng-controller="appCtrl">
 
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
 
-				<div class="list-group">
-					<a href="#" class="list-group-item" ng-repeat="movil in moviles">
-						<h4 class="list-group-item-heading">{{movil[2]}}</h4>
-						<p class="list-group-item-text">{{movil[3]}}</p>
-						<p class="list-group-item-text">{{movil[4]}}</p>
-					</a>
-				</div>
+						<div class="list-group">
+							<a href="#" class="list-group-item" ng-repeat="movil in moviles">
+								<h4 class="list-group-item-heading">{{movil[2]}}</h4>
+								<p class="list-group-item-text">{{movil[3]}}</p>
+								<p class="list-group-item-text">{{movil[4]}}</p>
+							</a>
+						</div>
+					</div>
 			</div>
-	</div>
-</div>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhDzIGE3_VRBh00_fVYzL7nCmm9mIK2Dw&v=3.exp"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-<script src="javascripts/app.js"></script>
+		</div>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhDzIGE3_VRBh00_fVYzL7nCmm9mIK2Dw&v=3.exp"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+		<script src="javascripts/app.js"></script>
+	</body>
+</html>
