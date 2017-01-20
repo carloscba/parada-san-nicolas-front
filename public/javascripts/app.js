@@ -4,7 +4,8 @@ angular.module('app', []).controller('appCtrl', function($scope, $http) {
 		method: 'GET',
 		url: '/data'
 	}).then(function successCallback(response) {
-		console.log(response.data[0].data)
+		
+		$scope.proximo = response.data[0].data[0]
 		$scope.moviles = response.data[0].data;
 
 	}, function errorCallback(response) {
