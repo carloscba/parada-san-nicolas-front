@@ -35,9 +35,18 @@
 		</nav>
 
 		<div ng-app="app" ng-controller="appCtrl">
-
-			<div class="container-fluid">
+			<div class="container-fluid" ng-show="loading"> 
 				<div class="row">
+					<div class="col-sm-12 loadingImg">
+						<img src="images/loading.gif" />
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" ng-hide="loading">
+				
+				<div class="alert alert-warning" role="alert" ng-show="moviles.length==0">Aplicación fuera de servicio, no se dispone de horarios para mostrar.</div>
+				
+				<div class="row" ng-hide="moviles.length==0">
 					<div class="col-sm-12">
 						<h3><span class="glyphicon glyphicon-bed" aria-hidden="true"></span> Arribando</h3>
 						<div class="list-group">
@@ -49,7 +58,7 @@
 						</div>						
 					</div>					
 				</div>
-				<div class="row">
+				<div class="row" ng-hide="moviles.length==0">
 					<div class="col-md-12">
 
 						<h3><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Próximos horarios</h3>
