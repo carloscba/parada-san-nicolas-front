@@ -16,7 +16,7 @@ https://storage.scrapinghub.com/items/145711/xxx?apikey=4ef60efbba564ca0b08fdea5
 router.get('/', function(req, res, next) {
 
   var project = "145711"
-  var spider = "horarios"
+  var spider = "sn-cba"
   var apiKey = "4ef60efbba564ca0b08fdea5a0501761"
   
   var getLastJob = function(){
