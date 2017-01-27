@@ -13,10 +13,10 @@ Item del job xxx
 https://storage.scrapinghub.com/items/145711/xxx?apikey=4ef60efbba564ca0b08fdea5a0501761&format=json
 */
 
-router.get('/', function(req, res, next) {
+router.get('/:spider', function(req, res, next) {
 
   var project = "145711"
-  var spider = "sn-cba"
+  var spider = req.params.spider
   var apiKey = "4ef60efbba564ca0b08fdea5a0501761"
   
   var getLastJob = function(){
@@ -26,7 +26,10 @@ router.get('/', function(req, res, next) {
         if (!error && response.statusCode == 200) {
 
             var data = JSON.parse(body)
-            getLastItems(data[0].key)
+            if(data[0]){
+                getLastItems(data[0].key)
+            }
+            
           
         }
     });

@@ -10,3 +10,8 @@ body {
 .loadingImg img{
     max-width: 200px; 
 }
+
+.origen-destino{
+    text-align: center;
+    font-weight: bold;
+}

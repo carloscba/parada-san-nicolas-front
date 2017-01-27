@@ -1,20 +1,14 @@
-angular.module('app', []).controller('appCtrl', function($scope, $http) {
+var app = angular.module('app', ['ngRoute']);
 
-	$scope.loading = true;
-
-	$http({
-		method: 'GET',
-		url: '/data'
-	}).then(function successCallback(response) {
-		$scope.loading = false;
-		$scope.proximo = response.data[0].data[0]
-		$scope.moviles = response.data[0].data;
-
-
-
-	}, function errorCallback(response) {
-	
-	});
-			
-
+app.config(function($routeProvider, $httpProvider) {
+  $routeProvider.when('/', {
+      templateUrl: 'views/home.html',
+      controller: 'ctrlHome'
+    })
+    
+    .when('/destino/:spyder', {
+      templateUrl: 'views/destino.html',
+      controller: 'ctrlDestino'
+    })
+    
 });

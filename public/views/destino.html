@@ -1,0 +1,39 @@
+<div class="container-fluid" ng-show="loading"> 
+    <div class="row">
+        <div class="col-sm-12 loadingImg">
+            <img src="images/loading.gif" />
+        </div>
+    </div>
+</div>
+<div class="container-fluid" ng-hide="loading">
+				
+    <div class="alert alert-warning" role="alert" ng-show="moviles.length==0">Aplicación fuera de servicio, no se dispone de horarios para mostrar.</div>
+    
+    <div class="row" ng-hide="moviles.length==0">
+        <div class="col-sm-12 origen-destino">
+            <h3>{{origenTitle}} - {{destinoTitle}}</h3>
+        </div>					
+        <div class="col-sm-12">
+            <!-- <h3><span class="glyphicon glyphicon-bed" aria-hidden="true"></span> Arribando</h3> //-->
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading"><strong>{{proximo[2]}}</strong></h4>
+                    <p class="list-group-item-text">{{proximo[3]}}</p>
+                    <p class="list-group-item-text">{{proximo[4]}}</p>
+                </a>
+            </div>						
+        </div>					
+    </div>
+    <div class="row" ng-hide="moviles.length==0">
+        <div class="col-md-12">
+
+            <h3><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Próximos horarios</h3>
+            <div class="list-group">
+                <a href="#" class="list-group-item" ng-repeat="movil in moviles.slice(1, moviles.length)">
+                    <h5 class="list-group-item-heading"><strong>{{movil[2]}}</strong></h5>
+                    <p class="list-group-item-text">{{movil[3]}}</p>
+                    <p class="list-group-item-text">{{movil[4]}}</p>
+                </a>
+            </div>
+        </div>
+</div>

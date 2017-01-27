@@ -22,69 +22,36 @@
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!--
 				<ul class="nav navbar-nav">
 					<li><a href="#">A Córdoba</a></li>
-					<!--
 					<li class="active"><a href="#">A Carlos Paz</a></li>
 					<li><a href="#">A Córdoba</a></li>
 					<li><a href="#">A Alta Gracia</a></li>
-					//-->
 				</ul>
+				//-->
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
 
-		<div ng-app="app" ng-controller="appCtrl">
-			<div class="container-fluid" ng-show="loading"> 
-				<div class="row">
-					<div class="col-sm-12 loadingImg">
-						<img src="images/loading.gif" />
-					</div>
-				</div>
-			</div>
-			<div class="container-fluid" ng-hide="loading">
-				
-				<div class="alert alert-warning" role="alert" ng-show="moviles.length==0">Aplicación fuera de servicio, no se dispone de horarios para mostrar.</div>
-				
-				<div class="row" ng-hide="moviles.length==0">
-					<div class="col-sm-12">
-						<h3><span class="glyphicon glyphicon-bed" aria-hidden="true"></span> Arribando</h3>
-						<div class="list-group">
-							<a href="#" class="list-group-item">
-								<h4 class="list-group-item-heading"><strong>{{proximo[2]}}</strong></h4>
-								<p class="list-group-item-text">{{proximo[3]}}</p>
-								<p class="list-group-item-text">{{proximo[4]}}</p>
-							</a>
-						</div>						
-					</div>					
-				</div>
-				<div class="row" ng-hide="moviles.length==0">
-					<div class="col-md-12">
+		<div ng-app="app">
+			<div ng-view>
 
-						<h3><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Próximos horarios</h3>
-						<div class="list-group">
-							<a href="#" class="list-group-item" ng-repeat="movil in moviles.slice(1, moviles.length)">
-								<h5 class="list-group-item-heading"><strong>{{movil[2]}}</strong></h5>
-								<p class="list-group-item-text">{{movil[3]}}</p>
-								<p class="list-group-item-text">{{movil[4]}}</p>
-							</a>
-						</div>
-					</div>
 			</div>
+			
+
+
+			
+			
 		</div>
-
-		<nav class="navbar navbar-default navbar-fixed-bottom">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="btn btn-block btn-success">Actualizar</a>
-				</div>
-			</div>
-		</nav>
 
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhDzIGE3_VRBh00_fVYzL7nCmm9mIK2Dw&v=3.exp"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+		
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>		
 		<script src="javascripts/app.js"></script>
+		<script src="javascripts/ctrl.js"></script>
 	</body>
 </html>
