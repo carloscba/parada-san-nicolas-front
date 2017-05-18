@@ -3,7 +3,7 @@ var React = require('react');
 module.exports = React.createClass({
     render : function(){
         return (
-            <h2>Switch Component</h2>
+            <h2>{ this.props.origin } - { this.props.destiny }</h2>
         )
     }
 })
