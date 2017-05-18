@@ -2,6 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var MenuComponent = require('./MenuComponent');
+var SwitchComponent = require('./SwitchComponent');
+var ItemComponent = require('./ItemComponent');
 
 var App = React.createClass({
     
@@ -30,11 +32,7 @@ var App = React.createClass({
 
     render: function(){
 
-        var citiesLayout = this.state.cities.map(function(item, index){
-            return (
-                <li key = { index } >{ item.name }</li>
-            )
-        }.bind(this));
+
 
         var scheduleLayout = this.state.schedule.map(function(item, index){
             return (
@@ -44,11 +42,17 @@ var App = React.createClass({
 
 
         return(
-            <div className="class-name">
-                <MenuComponent />
-                <h1>{ this.state.title }</h1>
-                <ul>{ citiesLayout }</ul>
-                <ul>{ scheduleLayout }</ul>
+            <div className="container">
+                <div className = "row">
+                    <div className="col-md-2">
+                        <MenuComponent cities = { this.state.cities } />
+                    </div>
+                    <div className="col-md-10">
+                        <h1>{ this.state.title }</h1>
+                        <SwitchComponent />
+                        <ul>{ scheduleLayout }</ul>
+                    </div>
+                </div>
             </div>
         )
     } 
