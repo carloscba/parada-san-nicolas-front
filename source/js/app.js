@@ -35,18 +35,22 @@ var App = React.createClass({
 
     selectCity : function(city){
 
+        if(this.state.origin !== '' && this.state.destiny !== ''){
+            this.setState({
+                origin : '',
+                destiny : ''
+            })            
+        }
+
         if(this.state.origin === ''){
             this.setState({
                 origin : city
             })
-        }
-        if(this.state.origin !== ''){
+        }else{
             this.setState({
                 destiny : city
             })
         }        
-
-
     },
 
     render: function(){
