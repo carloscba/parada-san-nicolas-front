@@ -39,3 +39,17 @@
 .cities-menu li:last-child{
     margin-top: 40px;
 }    
+
+.schedule {
+    padding-left: 0px;
+}
+
+.schedule li{
+    list-style: none;
+    border-bottom: 1px #CCC solid;
+    margin-bottom: 10px;
+}
+.schedule h2{
+    font-weight: bold;
+    font-size: 14px;
+}

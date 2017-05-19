@@ -5,12 +5,15 @@ module.exports = React.createClass({
 
         var scheduleLayout = this.props.schedule.map(function(item, index){
             return (
-                <li key = { index } >{ item[0] }</li>
+                <li key = { index } >
+                    <h2>{ item[2] }</h2>
+                    <p>{ item[3] }</p>
+                </li>
             )
         }.bind(this));
 
         return (
-            <ul> { scheduleLayout }</ul>
+            <ul className="schedule"> { scheduleLayout }</ul>
         )
     }
 })

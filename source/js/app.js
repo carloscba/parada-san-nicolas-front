@@ -16,17 +16,21 @@ var App = React.createClass({
                 { name : 'Córdoba', code : 'cb' }
             ],
             schedule : [],
-            origin : '',
-            destiny : ''
+            origin : 'sn',
+            destiny : 'cp'
         }
     },
 
-    componentDidMount : function(){
-        this.serverRequest = $.get('./data/cp-sn', function(results){
+    getData : function(route){
+        $.get('./data/'+route, function(results){
             this.setState({
                 schedule: results[0].data
             })
         }.bind(this))
+    },
+
+    componentDidMount : function(){
+        this.getData(this.state.origin+'-'+this.state.destiny);
     },
 
     componentWillUnmount : function(){
@@ -36,20 +40,17 @@ var App = React.createClass({
     selectCity : function(city){
 
         if(this.state.origin !== '' && this.state.destiny !== ''){
-            this.setState({
-                origin : '',
-                destiny : ''
-            })            
+            this.state.origin = '';
+            this.state.destiny = '';   
         }
-
         if(this.state.origin === ''){
-            this.setState({
-                origin : city
-            })
+            this.state.origin = city;
+            this.setState();
         }else{
-            this.setState({
-                destiny : city
-            })
+            this.state.destiny = city;
+            this.setState();
+            
+            this.getData(this.state.origin+'-'+this.state.destiny);
         }        
     },
 
