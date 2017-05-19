@@ -1,0 +1,55 @@
+.cities-menu{
+    display: inline;
+}
+.cities-menu li{
+    list-style: none;
+}
+
+.active{
+    background-color: #D3D3D3 !important;
+    color: #000 !important;
+}
+
+.cities-menu a{
+
+    width: 40px;
+    height: 40px;
+
+    display: block;
+
+    border-radius: 50%;
+    border: 0px;
+    padding-top: 12px;
+
+    outline: none;
+
+    background-color: #000;
+    color: #D3D3D3;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cities-menu li:first-child{
+    margin-bottom: 20px;
+}
+.cities-menu li:last-child{
+    margin-top: 40px;
+}    
+
+.schedule {
+    padding-left: 0px;
+}
+
+.schedule li{
+    list-style: none;
+    border-bottom: 1px #CCC solid;
+    margin-bottom: 10px;
+}
+.schedule h2{
+    font-weight: bold;
+    font-size: 14px;
+}
